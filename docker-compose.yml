@@ -1,0 +1,58 @@
+version: '3.8'
+services:
+  # WordPress Backend
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile-backend
+    ports:
+      - "8000:80"
+    depends_on:
+      - db
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_DEBUG', true);
+        define('WP_DEBUG_LOG', true);
+    volumes:
+      - wp_data:/var/www/html
+      - ./backend/wp-content/plugins/pokemon-api:/var/www/html/wp-content/plugins/pokemon-api
+    restart: always
+    networks:
+      - pokemon-network
+  # MySQL Database
+  db:
+    image: mysql:5.7
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+    ports:
+      - "3306:3306"
+    networks:
+      - pokemon-network
+  # React Frontend
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile-frontend
+      args:
+        - REACT_APP_API_URL=http://localhost:8000/wp-json/pokemon-api/v1
+    ports:
+      - "3001:80"
+    depends_on:
+      - backend
+    networks:
+      - pokemon-network
+networks:
+  pokemon-network:
+volumes:
+  db_data:
+  wp_data:
