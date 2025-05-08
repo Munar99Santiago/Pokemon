@@ -33,11 +33,11 @@ Este proyecto implementa una arquitectura de tres capas:
 
 *Instalación y Despliegue*
 
-Opción 1: Despliegue con Docker (Recomendado)
+Opción 1: Despliegue con Docker (Legible)
 - Clona el repositorio:
 
 GitBash: 
-git clone https://github.com/yourusername/pokemon-wp-api.git
+git clone https://github.com/Munar99Santiago/pokemon-wp-api.git
 cd pokemon-wp-api
 
 - Inicia los contenedores con Docker Compose:
