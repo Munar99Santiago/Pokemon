@@ -1,6 +1,6 @@
 import React from 'react';
 
-function PokemonCard({ pokemon }) {
+function PokemonCard({ pokemon, addToTeam }) {
   // Get color based on Pokemon type
   const getTypeColor = (type) => {
     const colors = {
@@ -69,6 +69,15 @@ function PokemonCard({ pokemon }) {
               <li key={index}>{capitalize(ability.replace('-', ' '))}</li>
             ))}
           </ul>
+        </div>
+        
+        <div className="pokemon-actions">
+          <button 
+            className="add-to-team-button" 
+            onClick={() => addToTeam(pokemon)}
+          >
+            Agregar a mi equipo
+          </button>
         </div>
       </div>
     </div>
