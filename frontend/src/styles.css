@@ -1,4 +1,4 @@
-/* Base Styles */
+/* Estilo base */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,13 +7,13 @@
 
 body {
   font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
-  background-image: url('https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png');
+  background-image: url('https://i.imgur.com/wS9ELX8.png');
   background-color: #f5f5f5;
   color: #333;
   line-height: 1.6;
 }
 
-/* App Container */
+/* App */
 .app-container {
   max-width: 1000px;
   margin: 0 auto;
@@ -223,7 +223,7 @@ body {
   border-top: 1px solid #e0e0e0;
 }
 
-/* Botón de agregar al equipo */
+/* Botón agregar al equipo */
 .add-to-team-button {
   background-color: #ff5722;
   color: white;
@@ -240,7 +240,7 @@ body {
   background-color: #e64a19;
 }
 
-/* Estilos para el equipo */
+/* Estilos para equipo */
 .team-container {
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
