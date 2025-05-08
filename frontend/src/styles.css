@@ -7,17 +7,13 @@
 
 body {
   font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
-  /* Imagen de fondo */
-  background-image: url('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png');
+  background-image: url('https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png');
   background-color: #f5f5f5;
-  background-size: 100px 100px;
-  background-repeat: repeat;
   color: #333;
   line-height: 1.6;
-};
+}
 
-
-/* App */
+/* App Contenedor */
 .app-container {
   max-width: 1000px;
   margin: 0 auto;
@@ -27,7 +23,7 @@ body {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Encabezado */
+/* Pie de pagina */
 .app-header {
   text-align: center;
   margin-bottom: 40px;
@@ -47,7 +43,7 @@ body {
   font-size: 1.2rem;
 }
 
-/* Contenido */
+/* Content */
 .app-main {
   background-color: white;
   border-radius: 10px;
@@ -56,7 +52,7 @@ body {
   margin-bottom: 40px;
 }
 
-/* Busca componentes */
+/* Buscar componentes */
 .search-container {
   margin-bottom: 30px;
 }
@@ -167,7 +163,7 @@ body {
   text-transform: capitalize;
 }
 
-/* Paginacion */
+/* Paginacio */
 .pagination {
   display: flex;
   justify-content: center;
@@ -201,7 +197,7 @@ body {
   color: #555;
 }
 
-/* Cargadno error */
+/* Cargando Error */
 .loading {
   text-align: center;
   padding: 20px;
@@ -218,7 +214,7 @@ body {
   text-align: center;
 }
 
-/* Pie pagina */
+/* Footer */
 .app-footer {
   text-align: center;
   padding: 20px 0;
@@ -227,7 +223,7 @@ body {
   border-top: 1px solid #e0e0e0;
 }
 
-/* Botón agregar al equipo */
+/* Botón de agregar al equipo */
 .add-to-team-button {
   background-color: #ff5722;
   color: white;
@@ -244,7 +240,7 @@ body {
   background-color: #e64a19;
 }
 
-/* Estilos para equipo */
+/* Estilos para el equipo */
 .team-container {
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
