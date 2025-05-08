@@ -1,6 +1,6 @@
 <?php
-/* Add to wp-config.php */
-// Enable REST API
+/* Añadir a wp-config.php */
+// Habilitación de la API de REST
 define('REST_API_ENABLED', true);
 
 // Habilitación de CORS para la API de REST
