@@ -1,4 +1,4 @@
-# Build stage
+# Construcción
 FROM node:16 as build
 
 WORKDIR /app
@@ -6,30 +6,30 @@ WORKDIR /app
 # Copy package.json and package-lock.json
 COPY frontend/package*.json ./
 
-# Install dependencies
+# Instala dependencias
 RUN npm install
 
-# Copy the rest of the app
+# Copia el resto de la aplicación
 COPY frontend/ ./
 
-# Set env variables
+# Establecer variables de env
 ARG REACT_APP_API_URL=http://backend:8000/wp-json/pokemon-api/v1
 ENV REACT_APP_API_URL=${REACT_APP_API_URL}
 
-# Build the app
+# Compila la aplicación
 RUN npm run build
 
-# Production stage
+# Etapa de producción
 FROM nginx:alpine
 
-# Copy built assets from build stage
+# Copia de recursos creados de la etapa de compilación
 COPY --from=build /app/build /usr/share/nginx/html
 
-# Copy nginx config
+# Copiar la configuración de nginx
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Expose port
+# Exportar puerto
 EXPOSE 80
 
-# Start nginx
+# Inicia nginx
 CMD ["nginx", "-g", "daemon off;"]
