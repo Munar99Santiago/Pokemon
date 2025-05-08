@@ -38,7 +38,7 @@ services:
       - "3306:3306"
     networks:
       - pokemon-network
-  # React Frontend
+  # Inicia Frontend
   frontend:
     build:
       context: .
